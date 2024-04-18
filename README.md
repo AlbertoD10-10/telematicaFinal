@@ -1,9 +1,34 @@
 # Proyecto DNS
 
+
+##Introduccion
 Este proyecto consiste en un servidor y un cliente DNS que se comunican a través de sockets. El servidor escucha solicitudes de dominio o IP y responde con la dirección IP correspondiente o el dominio asociado. El cliente realiza solicitudes al servidor y recibe respuestas.
 
-## Instrucciones de uso
+##Objetivo
+Aprender sobre el uso de sockets y servidores DNS: Familiarizarnos con el manejo de sockets para crear una aplicación cliente-servidor que gestione consultas DNS.
+Comprender la conectividad en redes: Profundizar en el funcionamiento de redes y en cómo se comunican los dispositivos a través de diferentes protocolos.
+Aplicar los conocimientos teóricos adquiridos: Poner en práctica los conceptos vistos en clase mediante la implementación de un proyecto real.
 
+##Desafíos
+Errores de codificación: Experimentamos dificultades técnicas al trabajar con sockets debido a la falta de experiencia en su desarrollo.
+Subida de código a máquinas virtuales: Al trabajar en entornos Windows con lenguaje C, enfrentamos desafíos al subir código a una máquina virtual.
+Problemas de compilación: Tuvimos que probar diferentes compiladores, y muchos no ofrecían resultados satisfactorios, especialmente para personas sin mucha experiencia.
+
+
+##Referencias
+#Teoría:
+Wikipedia - Cliente-servidor
+#Código de ejemplo:
+Repositorio de ejemplo en GitHub
+Tutorial en YouTube
+Tutorial avanzado en YouTube
+#Conexiones:
+Tutorial sobre conexiones en redes
+
+
+
+
+##Instrucciones de uso
 A continuación, se detallan los pasos para compilar y ejecutar el servidor y el cliente:
 
 ### Compilar el servidor
