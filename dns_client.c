@@ -6,13 +6,12 @@
 
 #define BUFFER_SIZE 256
 
-// Función para enviar la consulta DNS y recibir la respuesta
-void dns_query(const char *server_ip, int server_port, const char *query) {
+void dns_query(const char *server_ip, int server_port, const char *query) { // Enviar consulta DNS y recibir la respuesta
     SOCKET client_socket;
     struct sockaddr_in server_addr;
     char buffer[BUFFER_SIZE];
     
-    // Inicializar Winsock
+    // Inicializacion del  Winsock
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         fprintf(stderr, "Error al inicializar Winsock\n");
@@ -27,13 +26,13 @@ void dns_query(const char *server_ip, int server_port, const char *query) {
         exit(EXIT_FAILURE);
     }
 
-    // Configurar la dirección del servidor
+    // dirección del servidor
     memset(&server_addr, 0, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(server_port);
     server_addr.sin_addr.s_addr = inet_addr(server_ip);
 
-    // Enviar la consulta DNS al servidor
+    // Verificacion y envio de la consulta DNS al servidor
     if (sendto(client_socket, query, strlen(query), 0, (struct sockaddr *)&server_addr, sizeof(server_addr)) == SOCKET_ERROR) {
         fprintf(stderr, "Error al enviar la consulta DNS: %d\n", WSAGetLastError());
         closesocket(client_socket);
@@ -41,7 +40,7 @@ void dns_query(const char *server_ip, int server_port, const char *query) {
         exit(EXIT_FAILURE);
     }
 
-    // Recibir la respuesta DNS del servidor
+    // Recibir la respuesta DNS por parte del servidor
     int recv_len = recvfrom(client_socket, buffer, BUFFER_SIZE, 0, NULL, NULL);
     if (recv_len == SOCKET_ERROR) {
         fprintf(stderr, "Error al recibir la respuesta DNS: %d\n", WSAGetLastError());
@@ -50,11 +49,11 @@ void dns_query(const char *server_ip, int server_port, const char *query) {
         exit(EXIT_FAILURE);
     }
 
-    buffer[recv_len] = '\0'; // Añadir terminador de cadena
 
+    buffer[recv_len] = '\0'; 
     printf("Respuesta recibida: %s\n", buffer);
 
-    // Cerrar el socket
+    // Cierr del socket
     closesocket(client_socket);
 
     // Limpiar Winsock

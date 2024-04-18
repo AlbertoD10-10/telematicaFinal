@@ -115,7 +115,7 @@ int main(int argc, char *argv[]) {
         handle_dns_request(server_socket, &client_addr, client_addr_len);
     }
 
-    // Cerrar el socket
+    // Cierre del socket
     closesocket(server_socket);
 
     // Limpiar Winsock

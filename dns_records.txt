@@ -3,3 +3,5 @@ mail.ejemplo.com 192.168.1.2
 ftp.ejemplo.com 192.168.1.3
 192.168.1.4 servidor.ejemplo.com
 192.168.1.5 archivo.ejemplo.com
+www.ventaSalchipapas.com 192.168.1.6
+www.ventaPerros.com  192.168.1.7
