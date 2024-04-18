@@ -5,3 +5,5 @@ servidor.ejemplo.com 192.168.1.4
 archivo.ejemplo.com 192.168.1.5 
 www.ventaSalchipapas.com 192.168.1.6
 www.ventaPerros.com  192.168.1.7
+www.eafit.edu.co 200.12.180.242
+www.elcorral.com 52.41.173.82
